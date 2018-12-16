@@ -9,8 +9,14 @@
 /* Begin PBXBuildFile section */
 		0AE8EEBBE3BCEB0123E2CA49 /* Pods_test_meetic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE5AF882F3703F4217A4EA9 /* Pods_test_meetic.framework */; };
 		B04DA16EAA0D68EB0409D767 /* Pods_test_meeticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09819CB6854B38B4D4A3DCDF /* Pods_test_meeticTests.framework */; };
+		F85EDED221C7089B00E13B1E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85EDED121C7089B00E13B1E /* HomeViewController.swift */; };
+		F85EDED521C7092400E13B1E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85EDED421C7092400E13B1E /* HomeViewModel.swift */; };
+		F861278521C6C3DB00A6EA98 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861278421C6C3DB00A6EA98 /* Router.swift */; };
+		F861278721C6C6E100A6EA98 /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861278621C6C6E100A6EA98 /* CharacterRepository.swift */; };
+		F861278921C6C79900A6EA98 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861278821C6C79900A6EA98 /* Character.swift */; };
+		F861278B21C6C8A000A6EA98 /* CharactersPageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861278A21C6C8A000A6EA98 /* CharactersPageInfo.swift */; };
+		F861278F21C6C8ED00A6EA98 /* CharactersPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861278E21C6C8ED00A6EA98 /* CharactersPage.swift */; };
 		F88449C321C6A1D3000D26DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88449C221C6A1D3000D26DB /* AppDelegate.swift */; };
-		F88449C521C6A1D3000D26DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88449C421C6A1D3000D26DB /* ViewController.swift */; };
 		F88449C821C6A1D3000D26DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88449C621C6A1D3000D26DB /* Main.storyboard */; };
 		F88449CA21C6A1D4000D26DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88449C921C6A1D4000D26DB /* Assets.xcassets */; };
 		F88449CD21C6A1D4000D26DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88449CB21C6A1D4000D26DB /* LaunchScreen.storyboard */; };
@@ -33,9 +39,15 @@
 		09B82FA2A6055F88BC6CDC26 /* Pods-test-meeticTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-meeticTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test-meeticTests/Pods-test-meeticTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7DA3A4C7EDE8CCF44D6A79BA /* Pods-test-meetic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-meetic.release.xcconfig"; path = "Pods/Target Support Files/Pods-test-meetic/Pods-test-meetic.release.xcconfig"; sourceTree = "<group>"; };
 		EB2784C8D28A05B0AD2CF7D4 /* Pods-test-meetic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-meetic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test-meetic/Pods-test-meetic.debug.xcconfig"; sourceTree = "<group>"; };
+		F85EDED121C7089B00E13B1E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F85EDED421C7092400E13B1E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F861278421C6C3DB00A6EA98 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F861278621C6C6E100A6EA98 /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
+		F861278821C6C79900A6EA98 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		F861278A21C6C8A000A6EA98 /* CharactersPageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPageInfo.swift; sourceTree = "<group>"; };
+		F861278E21C6C8ED00A6EA98 /* CharactersPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPage.swift; sourceTree = "<group>"; };
 		F88449BF21C6A1D3000D26DB /* test-meetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-meetic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88449C221C6A1D3000D26DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F88449C421C6A1D3000D26DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F88449C721C6A1D3000D26DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F88449C921C6A1D4000D26DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F88449CC21C6A1D4000D26DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,6 +101,7 @@
 		F855BBF121C6AD1700F7BBB7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F861278421C6C3DB00A6EA98 /* Router.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -117,10 +130,10 @@
 			isa = PBXGroup;
 			children = (
 				F88449C221C6A1D3000D26DB /* AppDelegate.swift */,
-				F88449C421C6A1D3000D26DB /* ViewController.swift */,
 				F88449C621C6A1D3000D26DB /* Main.storyboard */,
 				F88449E221C6A232000D26DB /* Home */,
 				F88449E321C6A2F0000D26DB /* Profile */,
+				F88449E521C6A3A0000D26DB /* Model */,
 				F88449E921C6A400000D26DB /* Repository */,
 				F855BBF121C6AD1700F7BBB7 /* Networking */,
 				F88449C921C6A1D4000D26DB /* Assets.xcassets */,
@@ -142,8 +155,8 @@
 		F88449E221C6A232000D26DB /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F88449E621C6A3A6000D26DB /* View */,
-				F88449E521C6A3A0000D26DB /* Model */,
+				F85EDED121C7089B00E13B1E /* HomeViewController.swift */,
+				F85EDED421C7092400E13B1E /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -152,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				F88449E721C6A3B4000D26DB /* View */,
-				F88449E821C6A3B8000D26DB /* Model */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -160,15 +172,11 @@
 		F88449E521C6A3A0000D26DB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F861278821C6C79900A6EA98 /* Character.swift */,
+				F861278A21C6C8A000A6EA98 /* CharactersPageInfo.swift */,
+				F861278E21C6C8ED00A6EA98 /* CharactersPage.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		F88449E621C6A3A6000D26DB /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F88449E721C6A3B4000D26DB /* View */ = {
@@ -178,16 +186,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F88449E821C6A3B8000D26DB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		F88449E921C6A400000D26DB /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				F861278621C6C6E100A6EA98 /* CharacterRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -365,7 +367,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F88449C521C6A1D3000D26DB /* ViewController.swift in Sources */,
+				F861278B21C6C8A000A6EA98 /* CharactersPageInfo.swift in Sources */,
+				F861278721C6C6E100A6EA98 /* CharacterRepository.swift in Sources */,
+				F85EDED221C7089B00E13B1E /* HomeViewController.swift in Sources */,
+				F85EDED521C7092400E13B1E /* HomeViewModel.swift in Sources */,
+				F861278921C6C79900A6EA98 /* Character.swift in Sources */,
+				F861278F21C6C8ED00A6EA98 /* CharactersPage.swift in Sources */,
+				F861278521C6C3DB00A6EA98 /* Router.swift in Sources */,
 				F88449C321C6A1D3000D26DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
