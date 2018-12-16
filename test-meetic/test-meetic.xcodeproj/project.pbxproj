@@ -11,6 +11,8 @@
 		B04DA16EAA0D68EB0409D767 /* Pods_test_meeticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09819CB6854B38B4D4A3DCDF /* Pods_test_meeticTests.framework */; };
 		F85EDED221C7089B00E13B1E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85EDED121C7089B00E13B1E /* HomeViewController.swift */; };
 		F85EDED521C7092400E13B1E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85EDED421C7092400E13B1E /* HomeViewModel.swift */; };
+		F85EDED821C70E6600E13B1E /* HomeCharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85EDED621C70E6600E13B1E /* HomeCharacterTableViewCell.swift */; };
+		F85EDED921C70E6600E13B1E /* HomeCharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85EDED721C70E6600E13B1E /* HomeCharacterTableViewCell.xib */; };
 		F861278521C6C3DB00A6EA98 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861278421C6C3DB00A6EA98 /* Router.swift */; };
 		F861278721C6C6E100A6EA98 /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861278621C6C6E100A6EA98 /* CharacterRepository.swift */; };
 		F861278921C6C79900A6EA98 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861278821C6C79900A6EA98 /* Character.swift */; };
@@ -41,6 +43,8 @@
 		EB2784C8D28A05B0AD2CF7D4 /* Pods-test-meetic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-meetic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test-meetic/Pods-test-meetic.debug.xcconfig"; sourceTree = "<group>"; };
 		F85EDED121C7089B00E13B1E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F85EDED421C7092400E13B1E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F85EDED621C70E6600E13B1E /* HomeCharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCharacterTableViewCell.swift; sourceTree = "<group>"; };
+		F85EDED721C70E6600E13B1E /* HomeCharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCharacterTableViewCell.xib; sourceTree = "<group>"; };
 		F861278421C6C3DB00A6EA98 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F861278621C6C6E100A6EA98 /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
 		F861278821C6C79900A6EA98 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 			children = (
 				F85EDED121C7089B00E13B1E /* HomeViewController.swift */,
 				F85EDED421C7092400E13B1E /* HomeViewModel.swift */,
+				F85EDED621C70E6600E13B1E /* HomeCharacterTableViewCell.swift */,
+				F85EDED721C70E6600E13B1E /* HomeCharacterTableViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85EDED921C70E6600E13B1E /* HomeCharacterTableViewCell.xib in Resources */,
 				F88449CD21C6A1D4000D26DB /* LaunchScreen.storyboard in Resources */,
 				F88449CA21C6A1D4000D26DB /* Assets.xcassets in Resources */,
 				F88449C821C6A1D3000D26DB /* Main.storyboard in Resources */,
@@ -371,6 +378,7 @@
 				F861278721C6C6E100A6EA98 /* CharacterRepository.swift in Sources */,
 				F85EDED221C7089B00E13B1E /* HomeViewController.swift in Sources */,
 				F85EDED521C7092400E13B1E /* HomeViewModel.swift in Sources */,
+				F85EDED821C70E6600E13B1E /* HomeCharacterTableViewCell.swift in Sources */,
 				F861278921C6C79900A6EA98 /* Character.swift in Sources */,
 				F861278F21C6C8ED00A6EA98 /* CharactersPage.swift in Sources */,
 				F861278521C6C3DB00A6EA98 /* Router.swift in Sources */,
