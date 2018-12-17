@@ -12,9 +12,9 @@ final class AppScreens {
 
     private let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-    func createHomeViewController() -> HomeViewController {
+    func createHomeViewController(delegate: HomeDelegate) -> HomeViewController {
         let viewController: HomeViewController = instantiateViewController(with: String(describing: HomeViewController.self))
-        viewController.viewModel = HomeViewModel()
+        viewController.viewModel = HomeViewModel(delegate: delegate)
         return viewController
     }
 

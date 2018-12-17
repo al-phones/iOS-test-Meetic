@@ -20,8 +20,21 @@ final class AppCoordinator {
     }
 
     func start() {
-        let viewController = screens.createHomeViewController()
+        let viewController = screens.createHomeViewController(delegate: self)
         navigationController = UINavigationController(rootViewController: viewController)
         presenter.rootViewController = navigationController
+    }
+
+    func navigateToProfile(with id: Int) {
+        let viewController = screens.createProfileViewController(profileId: id)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+// MARK: - HomeDelegate
+
+extension AppCoordinator: HomeDelegate {
+    func didSelectCharacter(id: Int) {
+        navigateToProfile(with: id)
     }
 }

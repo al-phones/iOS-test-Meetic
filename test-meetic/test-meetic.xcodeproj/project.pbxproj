@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0AE8EEBBE3BCEB0123E2CA49 /* Pods_test_meetic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE5AF882F3703F4217A4EA9 /* Pods_test_meetic.framework */; };
 		B04DA16EAA0D68EB0409D767 /* Pods_test_meeticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09819CB6854B38B4D4A3DCDF /* Pods_test_meeticTests.framework */; };
+		F85E1D3921C8509E00050E67 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E1D3821C8509E00050E67 /* AppCoordinator.swift */; };
+		F85E1D3B21C8514400050E67 /* AppScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E1D3A21C8514400050E67 /* AppScreens.swift */; };
+		F85E1D3D21C85DED00050E67 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E1D3C21C85DED00050E67 /* ProfileViewController.swift */; };
+		F85E1D3F21C85E7F00050E67 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E1D3E21C85E7F00050E67 /* ProfileViewModel.swift */; };
 		F85EDED221C7089B00E13B1E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85EDED121C7089B00E13B1E /* HomeViewController.swift */; };
 		F85EDED521C7092400E13B1E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85EDED421C7092400E13B1E /* HomeViewModel.swift */; };
 		F85EDED821C70E6600E13B1E /* HomeCharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85EDED621C70E6600E13B1E /* HomeCharacterTableViewCell.swift */; };
@@ -41,6 +45,10 @@
 		09B82FA2A6055F88BC6CDC26 /* Pods-test-meeticTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-meeticTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test-meeticTests/Pods-test-meeticTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7DA3A4C7EDE8CCF44D6A79BA /* Pods-test-meetic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-meetic.release.xcconfig"; path = "Pods/Target Support Files/Pods-test-meetic/Pods-test-meetic.release.xcconfig"; sourceTree = "<group>"; };
 		EB2784C8D28A05B0AD2CF7D4 /* Pods-test-meetic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-meetic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test-meetic/Pods-test-meetic.debug.xcconfig"; sourceTree = "<group>"; };
+		F85E1D3821C8509E00050E67 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F85E1D3A21C8514400050E67 /* AppScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreens.swift; sourceTree = "<group>"; };
+		F85E1D3C21C85DED00050E67 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F85E1D3E21C85E7F00050E67 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F85EDED121C7089B00E13B1E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F85EDED421C7092400E13B1E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F85EDED621C70E6600E13B1E /* HomeCharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCharacterTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				F88449C221C6A1D3000D26DB /* AppDelegate.swift */,
+				F85E1D3A21C8514400050E67 /* AppScreens.swift */,
+				F85E1D3821C8509E00050E67 /* AppCoordinator.swift */,
 				F88449C621C6A1D3000D26DB /* Main.storyboard */,
 				F88449E221C6A232000D26DB /* Home */,
 				F88449E321C6A2F0000D26DB /* Profile */,
@@ -170,7 +180,8 @@
 		F88449E321C6A2F0000D26DB /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				F88449E721C6A3B4000D26DB /* View */,
+				F85E1D3C21C85DED00050E67 /* ProfileViewController.swift */,
+				F85E1D3E21C85E7F00050E67 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -183,13 +194,6 @@
 				F861278E21C6C8ED00A6EA98 /* CharactersPage.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		F88449E721C6A3B4000D26DB /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F88449E921C6A400000D26DB /* Repository */ = {
@@ -375,12 +379,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F861278B21C6C8A000A6EA98 /* CharactersPageInfo.swift in Sources */,
+				F85E1D3B21C8514400050E67 /* AppScreens.swift in Sources */,
 				F861278721C6C6E100A6EA98 /* CharacterRepository.swift in Sources */,
+				F85E1D3921C8509E00050E67 /* AppCoordinator.swift in Sources */,
 				F85EDED221C7089B00E13B1E /* HomeViewController.swift in Sources */,
 				F85EDED521C7092400E13B1E /* HomeViewModel.swift in Sources */,
+				F85E1D3D21C85DED00050E67 /* ProfileViewController.swift in Sources */,
 				F85EDED821C70E6600E13B1E /* HomeCharacterTableViewCell.swift in Sources */,
 				F861278921C6C79900A6EA98 /* Character.swift in Sources */,
 				F861278F21C6C8ED00A6EA98 /* CharactersPage.swift in Sources */,
+				F85E1D3F21C85E7F00050E67 /* ProfileViewModel.swift in Sources */,
 				F861278521C6C3DB00A6EA98 /* Router.swift in Sources */,
 				F88449C321C6A1D3000D26DB /* AppDelegate.swift in Sources */,
 			);

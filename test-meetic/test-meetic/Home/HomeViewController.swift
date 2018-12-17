@@ -16,7 +16,7 @@ final class HomeViewController: UIViewController {
 
     // MARK: - Properties
 
-    var viewModel = HomeViewModel()
+    var viewModel: HomeViewModel!
     private let dataSource = HomeViewDataSource()
 
     // MARK: Lifecycle
@@ -25,6 +25,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         configureTableView()
         bind(to: viewModel)
+        bind(to: dataSource)
         viewModel.viewDidLoad()
     }
 
@@ -38,6 +39,12 @@ final class HomeViewController: UIViewController {
         }
     }
 
+    private func bind(to dataSource: HomeViewDataSource) {
+        dataSource.didSelectProfile = { [weak self] index in
+            self?.viewModel.didSelectProfile(at: index)
+        }
+    }
+
     private func configureTableView() {
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
@@ -47,6 +54,7 @@ final class HomeViewController: UIViewController {
 
 final class HomeViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     var characters: [Character] = []
+    var didSelectProfile: ((Int) -> Void)?
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characters.count
@@ -61,5 +69,6 @@ final class HomeViewDataSource: NSObject, UITableViewDataSource, UITableViewDele
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelectProfile?(indexPath.row)
     }
 }

@@ -10,7 +10,7 @@ import Alamofire
 
 protocol CharacterRepositoryType {
     func getCharacters(successHandler: @escaping ([Character]) -> Void)
-    func getCharacter(with id: Int)
+    func getCharacter(with id: Int, successHandler: @escaping (Character) -> Void)
 }
 
 final class CharacterRepository: CharacterRepositoryType {
@@ -18,8 +18,8 @@ final class CharacterRepository: CharacterRepositoryType {
         Alamofire.request(Router.getCharacters())
             .responseData(completionHandler: { response in
                 switch response.result {
-                case .success(let value):
-                    if let characterPage = try? JSONDecoder().decode(CharactersPage.self, from: value) {
+                case .success(let data):
+                    if let characterPage = try? JSONDecoder().decode(CharactersPage.self, from: data) {
                         successHandler(characterPage.characters)
                     }
                 case .failure(let error):
@@ -28,6 +28,19 @@ final class CharacterRepository: CharacterRepositoryType {
             })
     }
 
-    func getCharacter(with id: Int) {
+    func getCharacter(
+        with id: Int,
+        successHandler: @escaping (Character) -> Void) {
+        Alamofire.request(Router.getCharacter(id: id))
+            .responseData(completionHandler: { response in
+                switch response.result {
+                case .success(let data):
+                    if let character = try? JSONDecoder().decode(Character.self, from: data) {
+                        successHandler(character)
+                    }
+                case .failure(let error):
+                    print("\(error)")
+                }
+            })
     }
 }

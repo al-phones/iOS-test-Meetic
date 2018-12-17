@@ -14,7 +14,7 @@ class HomeCharacterTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var characterImageView: UIImageView! {
         didSet {
-            characterImageView.layer.cornerRadius = 3
+            characterImageView.layer.cornerRadius = 6
         }
     }
     @IBOutlet private weak var descriptionView: UIView! {

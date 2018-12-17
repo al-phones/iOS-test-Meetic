@@ -11,6 +11,11 @@ struct Character: Decodable {
     let name: String
     let status: String
     let species: String
+    let origin: Origin
     let gender: String
     let image: String
+
+    struct Origin: Decodable {
+        let name: String
+    }
 }

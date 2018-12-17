@@ -6,10 +6,15 @@
 //  Copyright © 2018 aphones. All rights reserved.
 //
 
+protocol HomeDelegate: class {
+    func didSelectCharacter(id: Int)
+}
+
 final class HomeViewModel {
 
     // MARK: - Properties
 
+    private weak var delegate: HomeDelegate?
     private let characterRepository: CharacterRepositoryType
     private var characters: [Character] = [] {
         didSet {
@@ -19,7 +24,9 @@ final class HomeViewModel {
 
     // MARK: - Init
 
-    init(characterRepository: CharacterRepositoryType = CharacterRepository()) {
+    init(delegate: HomeDelegate,
+         characterRepository: CharacterRepositoryType = CharacterRepository()) {
+        self.delegate = delegate
         self.characterRepository = characterRepository
     }
 
@@ -31,6 +38,11 @@ final class HomeViewModel {
 
     func viewDidLoad() {
         fetchCharacters()
+    }
+
+    func didSelectProfile(at index: Int) {
+        let characterId = characters[index].id
+        delegate?.didSelectCharacter(id: characterId)
     }
 
     // MARK: - Private
