@@ -38,6 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="60" y="27"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="X0l-gI-f5D">
@@ -93,6 +94,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="hnj-A4-hgj" id="9gf-EY-Nle"/>
                         <outlet property="genderLabel" destination="Tx4-Mz-ltB" id="n0v-89-MDP"/>
+                        <outlet property="imageView" destination="0Ra-lh-a9Q" id="vjz-H0-ZfE"/>
                         <outlet property="nameLabel" destination="uCF-0O-c6W" id="jEu-2J-xY0"/>
                     </connections>
                 </viewController>

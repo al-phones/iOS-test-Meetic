@@ -15,6 +15,7 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var genderLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
 
     // MARK: - Properties
 
@@ -41,6 +42,10 @@ final class ProfileViewController: UIViewController {
 
         viewModel.description = { [weak self] description in
             self?.descriptionLabel.text = description
+        }
+
+        viewModel.imageUrl = { [weak self] imageUrl in
+            self?.imageView.load(from: imageUrl)
         }
     }
 }

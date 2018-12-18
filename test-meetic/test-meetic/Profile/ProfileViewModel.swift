@@ -6,6 +6,8 @@
 //  Copyright © 2018 aphones. All rights reserved.
 //
 
+import Foundation
+
 final class ProfileViewModel {
 
     // MARK: - Properties
@@ -26,6 +28,7 @@ final class ProfileViewModel {
     var name: ((String) -> Void)?
     var gender: ((String) -> Void)?
     var description: ((String) -> Void)?
+    var imageUrl: ((URL) -> Void)?
 
     // MARK: - Inputs
 
@@ -40,6 +43,9 @@ final class ProfileViewModel {
             self?.name?(character.name)
             self?.gender?(character.gender)
             self?.description?("\(character.status) - \(character.species) - \(character.origin.name)")
+            if let imageUrl = URL(string: character.image) {
+                self?.imageUrl?(imageUrl)
+            }
         })
     }
 }

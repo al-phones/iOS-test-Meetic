@@ -61,6 +61,7 @@
                 <outlet property="characterImageView" destination="Ksw-eA-law" id="EIh-fL-IOF"/>
                 <outlet property="characterNameLabel" destination="k8S-HY-cUi" id="Dfl-u4-T7b"/>
                 <outlet property="descriptionView" destination="95r-2A-WP6" id="4pd-PA-ONa"/>
+                <outlet property="photoImageView" destination="Ksw-eA-law" id="cft-vd-c5l"/>
             </connections>
             <point key="canvasLocation" x="108" y="126.83658170914543"/>
         </tableViewCell>

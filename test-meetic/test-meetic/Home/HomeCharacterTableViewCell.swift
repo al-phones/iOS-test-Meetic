@@ -23,6 +23,7 @@ class HomeCharacterTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet private weak var characterNameLabel: UILabel!
+    @IBOutlet private weak var photoImageView: UIImageView!
 
     // MARK: - Lifecycle
 
@@ -38,6 +39,9 @@ class HomeCharacterTableViewCell: UITableViewCell {
 
     func configure(with character: Character) {
         characterNameLabel.text = character.name
+        if let imageUrl = URL(string: character.image) {
+            photoImageView.load(from: imageUrl)
+        }
     }
     
 }

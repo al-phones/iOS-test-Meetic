@@ -27,6 +27,7 @@
 		F88449CA21C6A1D4000D26DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88449C921C6A1D4000D26DB /* Assets.xcassets */; };
 		F88449CD21C6A1D4000D26DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88449CB21C6A1D4000D26DB /* LaunchScreen.storyboard */; };
 		F88449D821C6A1D4000D26DB /* test_meeticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88449D721C6A1D4000D26DB /* test_meeticTests.swift */; };
+		F8C8A5E221C97513000756F5 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A5E121C97513000756F5 /* UIImageView+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F88449D321C6A1D4000D26DB /* test-meeticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "test-meeticTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88449D721C6A1D4000D26DB /* test_meeticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_meeticTests.swift; sourceTree = "<group>"; };
 		F88449D921C6A1D4000D26DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8C8A5E121C97513000756F5 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		FFE5AF882F3703F4217A4EA9 /* Pods_test_meetic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_meetic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				F861278421C6C3DB00A6EA98 /* Router.swift */,
+				F8C8A5E121C97513000756F5 /* UIImageView+Utils.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				F861278F21C6C8ED00A6EA98 /* CharactersPage.swift in Sources */,
 				F85E1D3F21C85E7F00050E67 /* ProfileViewModel.swift in Sources */,
 				F861278521C6C3DB00A6EA98 /* Router.swift in Sources */,
+				F8C8A5E221C97513000756F5 /* UIImageView+Utils.swift in Sources */,
 				F88449C321C6A1D3000D26DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
