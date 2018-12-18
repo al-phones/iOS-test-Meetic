@@ -22,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.makeKeyAndVisible()
 
-        appCoordinator = AppCoordinator(presenter: window!)
+        let appContext = AppContext(
+            profileRepository: CharacterRepository(),
+            barButtonItemFactory: BarButtonItemFactory())
+        appCoordinator = AppCoordinator(presenter: window!, appContext: appContext)
         appCoordinator.start()
 
         return true

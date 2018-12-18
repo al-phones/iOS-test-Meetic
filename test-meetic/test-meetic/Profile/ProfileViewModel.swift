@@ -8,17 +8,24 @@
 
 import Foundation
 
+protocol ProfileScreenDelegate: class {
+    func didGoBack()
+}
+
 final class ProfileViewModel {
 
     // MARK: - Properties
 
+    weak var delegate: ProfileScreenDelegate?
     private let profileId: Int
     private let characterRepository: CharacterRepositoryType
 
     // MARK: - Init
 
-    init(profileId: Int,
-         characterRepository: CharacterRepositoryType = CharacterRepository()) {
+    init(delegate: ProfileScreenDelegate,
+         profileId: Int,
+         characterRepository: CharacterRepositoryType) {
+        self.delegate = delegate
         self.profileId = profileId
         self.characterRepository = characterRepository
     }
@@ -34,6 +41,10 @@ final class ProfileViewModel {
 
     func viewDidLoad() {
         fetchCharacter(with: profileId)
+    }
+
+    func goBack() {
+        delegate?.didGoBack()
     }
 
     // MARK: - Private

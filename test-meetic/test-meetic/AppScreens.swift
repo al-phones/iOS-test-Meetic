@@ -10,17 +10,34 @@ import UIKit
 
 final class AppScreens {
 
+    // MARK: - Properties
+
+    private let appContext: AppContext
     private let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-    func createHomeViewController(delegate: HomeDelegate) -> HomeViewController {
+    // MARK: - Init
+
+    init(appContext: AppContext) {
+        self.appContext = appContext
+    }
+
+    // MARK: - Screens
+
+    func createHomeViewController(delegate: HomeScreenDelegate) -> HomeViewController {
         let viewController: HomeViewController = instantiateViewController(with: String(describing: HomeViewController.self))
-        viewController.viewModel = HomeViewModel(delegate: delegate)
+        viewController.viewModel = HomeViewModel(
+            delegate: delegate,
+            characterRepository: appContext.profileRepository)
         return viewController
     }
 
-    func createProfileViewController(profileId: Int) -> ProfileViewController {
+    func createProfileViewController(delegate: ProfileScreenDelegate, profileId: Int) -> ProfileViewController {
         let viewController: ProfileViewController = instantiateViewController(with: String(describing: ProfileViewController.self))
-        viewController.viewModel = ProfileViewModel(profileId: profileId)
+        viewController.barButtonItemFactory = appContext.barButtonItemFactory
+        viewController.viewModel = ProfileViewModel(
+            delegate: delegate,
+            profileId: profileId,
+            characterRepository: appContext.profileRepository)
         return viewController
     }
 

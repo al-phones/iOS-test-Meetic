@@ -12,11 +12,13 @@ final class AppCoordinator {
 
     private let presenter: UIWindow
     private let screens: AppScreens
+    private let appContext: AppContext
     private var navigationController: UINavigationController!
 
-    init(presenter: UIWindow) {
+    init(presenter: UIWindow, appContext: AppContext) {
         self.presenter = presenter
-        screens = AppScreens()
+        self.appContext = appContext
+        screens = AppScreens(appContext: appContext)
     }
 
     func start() {
@@ -26,15 +28,23 @@ final class AppCoordinator {
     }
 
     func navigateToProfile(with id: Int) {
-        let viewController = screens.createProfileViewController(profileId: id)
+        let viewController = screens.createProfileViewController(delegate: self, profileId: id)
         navigationController.pushViewController(viewController, animated: true)
     }
 }
 
-// MARK: - HomeDelegate
+// MARK: - HomeScreenDelegate
 
-extension AppCoordinator: HomeDelegate {
+extension AppCoordinator: HomeScreenDelegate {
     func didSelectCharacter(id: Int) {
         navigateToProfile(with: id)
+    }
+}
+
+// MARK: - ProfileScreenDelegate
+
+extension AppCoordinator: ProfileScreenDelegate {
+    func didGoBack() {
+        navigationController.dismiss(animated: true)
     }
 }

@@ -28,6 +28,9 @@
 		F88449CD21C6A1D4000D26DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88449CB21C6A1D4000D26DB /* LaunchScreen.storyboard */; };
 		F88449D821C6A1D4000D26DB /* test_meeticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88449D721C6A1D4000D26DB /* test_meeticTests.swift */; };
 		F8C8A5E221C97513000756F5 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A5E121C97513000756F5 /* UIImageView+Utils.swift */; };
+		F8C8A5E721C991FC000756F5 /* BarButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A5E621C991FC000756F5 /* BarButtonFactory.swift */; };
+		F8C8A5EA21C99220000756F5 /* BarButtonItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A5E921C99220000756F5 /* BarButtonItemFactory.swift */; };
+		F8C8A5EC21C992CE000756F5 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A5EB21C992CE000756F5 /* AppContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		F88449D721C6A1D4000D26DB /* test_meeticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_meeticTests.swift; sourceTree = "<group>"; };
 		F88449D921C6A1D4000D26DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8C8A5E121C97513000756F5 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
+		F8C8A5E621C991FC000756F5 /* BarButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonFactory.swift; sourceTree = "<group>"; };
+		F8C8A5E921C99220000756F5 /* BarButtonItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItemFactory.swift; sourceTree = "<group>"; };
+		F8C8A5EB21C992CE000756F5 /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		FFE5AF882F3703F4217A4EA9 /* Pods_test_meetic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_meetic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				F861278421C6C3DB00A6EA98 /* Router.swift */,
-				F8C8A5E121C97513000756F5 /* UIImageView+Utils.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -145,14 +150,16 @@
 			isa = PBXGroup;
 			children = (
 				F88449C221C6A1D3000D26DB /* AppDelegate.swift */,
-				F85E1D3A21C8514400050E67 /* AppScreens.swift */,
 				F85E1D3821C8509E00050E67 /* AppCoordinator.swift */,
+				F85E1D3A21C8514400050E67 /* AppScreens.swift */,
+				F8C8A5EB21C992CE000756F5 /* AppContext.swift */,
 				F88449C621C6A1D3000D26DB /* Main.storyboard */,
 				F88449E221C6A232000D26DB /* Home */,
 				F88449E321C6A2F0000D26DB /* Profile */,
 				F88449E521C6A3A0000D26DB /* Model */,
 				F88449E921C6A400000D26DB /* Repository */,
 				F855BBF121C6AD1700F7BBB7 /* Networking */,
+				F8C8A5E321C991AB000756F5 /* Commons */,
 				F88449C921C6A1D4000D26DB /* Assets.xcassets */,
 				F88449CB21C6A1D4000D26DB /* LaunchScreen.storyboard */,
 				F88449CE21C6A1D4000D26DB /* Info.plist */,
@@ -205,6 +212,40 @@
 				F861278621C6C6E100A6EA98 /* CharacterRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		F8C8A5E321C991AB000756F5 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				F8C8A5E821C9920D000756F5 /* BarButtonItemFactory */,
+				F8C8A5E521C991E5000756F5 /* BarButtonFactory */,
+				F8C8A5E421C991D0000756F5 /* UIKit+Extension */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		F8C8A5E421C991D0000756F5 /* UIKit+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F8C8A5E121C97513000756F5 /* UIImageView+Utils.swift */,
+			);
+			path = "UIKit+Extension";
+			sourceTree = "<group>";
+		};
+		F8C8A5E521C991E5000756F5 /* BarButtonFactory */ = {
+			isa = PBXGroup;
+			children = (
+				F8C8A5E621C991FC000756F5 /* BarButtonFactory.swift */,
+			);
+			path = BarButtonFactory;
+			sourceTree = "<group>";
+		};
+		F8C8A5E821C9920D000756F5 /* BarButtonItemFactory */ = {
+			isa = PBXGroup;
+			children = (
+				F8C8A5E921C99220000756F5 /* BarButtonItemFactory.swift */,
+			);
+			path = BarButtonItemFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,15 +425,18 @@
 				F861278B21C6C8A000A6EA98 /* CharactersPageInfo.swift in Sources */,
 				F85E1D3B21C8514400050E67 /* AppScreens.swift in Sources */,
 				F861278721C6C6E100A6EA98 /* CharacterRepository.swift in Sources */,
+				F8C8A5EC21C992CE000756F5 /* AppContext.swift in Sources */,
 				F85E1D3921C8509E00050E67 /* AppCoordinator.swift in Sources */,
 				F85EDED221C7089B00E13B1E /* HomeViewController.swift in Sources */,
 				F85EDED521C7092400E13B1E /* HomeViewModel.swift in Sources */,
 				F85E1D3D21C85DED00050E67 /* ProfileViewController.swift in Sources */,
 				F85EDED821C70E6600E13B1E /* HomeCharacterTableViewCell.swift in Sources */,
+				F8C8A5E721C991FC000756F5 /* BarButtonFactory.swift in Sources */,
 				F861278921C6C79900A6EA98 /* Character.swift in Sources */,
 				F861278F21C6C8ED00A6EA98 /* CharactersPage.swift in Sources */,
 				F85E1D3F21C85E7F00050E67 /* ProfileViewModel.swift in Sources */,
 				F861278521C6C3DB00A6EA98 /* Router.swift in Sources */,
+				F8C8A5EA21C99220000756F5 /* BarButtonItemFactory.swift in Sources */,
 				F8C8A5E221C97513000756F5 /* UIImageView+Utils.swift in Sources */,
 				F88449C321C6A1D3000D26DB /* AppDelegate.swift in Sources */,
 			);

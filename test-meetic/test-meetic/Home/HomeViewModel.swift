@@ -6,7 +6,7 @@
 //  Copyright © 2018 aphones. All rights reserved.
 //
 
-protocol HomeDelegate: class {
+protocol HomeScreenDelegate: class {
     func didSelectCharacter(id: Int)
 }
 
@@ -14,7 +14,7 @@ final class HomeViewModel {
 
     // MARK: - Properties
 
-    private weak var delegate: HomeDelegate?
+    private weak var delegate: HomeScreenDelegate?
     private let characterRepository: CharacterRepositoryType
     private var characters: [Character] = [] {
         didSet {
@@ -24,8 +24,8 @@ final class HomeViewModel {
 
     // MARK: - Init
 
-    init(delegate: HomeDelegate,
-         characterRepository: CharacterRepositoryType = CharacterRepository()) {
+    init(delegate: HomeScreenDelegate,
+         characterRepository: CharacterRepositoryType) {
         self.delegate = delegate
         self.characterRepository = characterRepository
     }

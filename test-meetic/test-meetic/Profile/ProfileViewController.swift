@@ -19,14 +19,20 @@ final class ProfileViewController: UIViewController {
 
     // MARK: - Properties
 
+    var barButtonItemFactory: BarButtonItemFactory!
     var viewModel: ProfileViewModel!
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+    }
+
+    @objc func backButtonItemDidSelect(_ sender: UIBarButtonItem) {
+        viewModel.goBack()
     }
 
     // MARK: - Private
@@ -47,5 +53,9 @@ final class ProfileViewController: UIViewController {
         viewModel.imageUrl = { [weak self] imageUrl in
             self?.imageView.load(from: imageUrl)
         }
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = barButtonItemFactory.makeBackButtonItem(target: self, action: #selector(backButtonItemDidSelect(_:)))
     }
 }
