@@ -23,30 +23,21 @@ final class AppScreens {
 
     // MARK: - Screens
 
-    func createHomeViewController(delegate: HomeScreenDelegate) -> HomeViewController {
-        let viewController: HomeViewController = instantiateViewController(with: String(describing: HomeViewController.self))
+    func createHomeViewController(delegate: HomeScreenDelegate) -> UIViewController {
+        let viewController: HomeViewController = storyboard.instantiateViewController(withIdentifier: String(describing: HomeViewController.self)) as! HomeViewController
         viewController.viewModel = HomeViewModel(
             delegate: delegate,
             characterRepository: appContext.characterRepository)
         return viewController
     }
 
-    func createCharacterViewController(delegate: CharacterScreenDelegate, characterId: Int) -> CharacterViewController {
-        let viewController: CharacterViewController = instantiateViewController(with: String(describing: CharacterViewController.self))
+    func createCharacterViewController(delegate: CharacterScreenDelegate, characterId: Int) -> UIViewController {
+        let viewController: CharacterViewController = storyboard.instantiateViewController(withIdentifier: String(describing: CharacterViewController.self)) as! CharacterViewController
         viewController.barButtonItemFactory = appContext.barButtonItemFactory
         viewController.viewModel = CharacterViewModel(
             delegate: delegate,
             characterId: characterId,
             characterRepository: appContext.characterRepository)
-        return viewController
-    }
-
-    // MARK: - Utils
-
-    private func instantiateViewController<T: UIViewController>(with identifier: String) -> T {
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as? T else {
-            fatalError("Unable to instantiate the ViewController: \(identifier)")
-        }
         return viewController
     }
 }
