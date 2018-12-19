@@ -44,12 +44,12 @@ final class HomeViewController: UIViewController {
     }
 
     private func bind(to dataSource: HomeViewDataSource) {
-        dataSource.didSelectProfile = { [weak self] index in
-            self?.viewModel.didSelectProfile(at: index)
+        dataSource.didSelectCharacter = { [weak self] index in
+            self?.viewModel.didSelectCharacter(at: index)
         }
 
         dataSource.didReachScrollBottom = { [weak self] in
-            self?.viewModel.fetchNextProfiles()
+            self?.viewModel.fetchNextCharacters()
         }
     }
 
@@ -62,7 +62,7 @@ final class HomeViewController: UIViewController {
 
 final class HomeViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     var characters: [Character] = []
-    var didSelectProfile: ((Int) -> Void)?
+    var didSelectCharacter: ((Int) -> Void)?
     var didReachScrollBottom: (() -> Void)?
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,7 +78,7 @@ final class HomeViewDataSource: NSObject, UITableViewDataSource, UITableViewDele
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectProfile?(indexPath.row)
+        didSelectCharacter?(indexPath.row)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

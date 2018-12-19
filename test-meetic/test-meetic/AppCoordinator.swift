@@ -27,8 +27,8 @@ final class AppCoordinator {
         presenter.rootViewController = navigationController
     }
 
-    func navigateToProfile(with id: Int) {
-        let viewController = screens.createProfileViewController(delegate: self, profileId: id)
+    func navigateToCharacter(with id: Int) {
+        let viewController = screens.createCharacterViewController(delegate: self, characterId: id)
         navigationController.pushViewController(viewController, animated: true)
     }
 }
@@ -36,15 +36,15 @@ final class AppCoordinator {
 // MARK: - HomeScreenDelegate
 
 extension AppCoordinator: HomeScreenDelegate {
-    func didSelectCharacter(id: Int) {
-        navigateToProfile(with: id)
+    func homeScreenDidSelectCharacter(with id: Int) {
+        navigateToCharacter(with: id)
     }
 }
 
-// MARK: - ProfileScreenDelegate
+// MARK: - CharacterScreenDelegate
 
-extension AppCoordinator: ProfileScreenDelegate {
-    func didGoBack() {
+extension AppCoordinator: CharacterScreenDelegate {
+    func characterScreenDidGoBack() {
         navigationController.popViewController(animated: true)
     }
 }

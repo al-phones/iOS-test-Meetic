@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  CharacterViewController.swift
 //  test-meetic
 //
 //  Created by Alex Phonesavanh on 17/12/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-final class ProfileViewController: UIViewController {
+final class CharacterViewController: UIViewController {
 
     // MARK: - Outlets
 
@@ -21,7 +21,7 @@ final class ProfileViewController: UIViewController {
     // MARK: - Properties
 
     var barButtonItemFactory: BarButtonItemFactory!
-    var viewModel: ProfileViewModel!
+    var viewModel: CharacterViewModel!
 
     // MARK: - Lifecycle
 
@@ -38,7 +38,7 @@ final class ProfileViewController: UIViewController {
 
     // MARK: - Private
 
-    private func bind(to viewModel: ProfileViewModel) {
+    private func bind(to viewModel: CharacterViewModel) {
         viewModel.name = { [weak self] name in
             self?.nameLabel.text = name
         }

@@ -7,7 +7,7 @@
 //
 
 protocol HomeScreenDelegate: class {
-    func didSelectCharacter(id: Int)
+    func homeScreenDidSelectCharacter(with id: Int)
 }
 
 final class HomeViewModel {
@@ -49,12 +49,12 @@ final class HomeViewModel {
         fetchCharacters(for: currentPage)
     }
 
-    func didSelectProfile(at index: Int) {
+    func didSelectCharacter(at index: Int) {
         let characterId = characters[index].id
-        delegate?.didSelectCharacter(id: characterId)
+        delegate?.homeScreenDidSelectCharacter(with: characterId)
     }
 
-    func fetchNextProfiles() {
+    func fetchNextCharacters() {
         guard !isFetchingData && currentPage < numberOfPages else { return }
         currentPage += 1
         fetchCharacters(for: currentPage)

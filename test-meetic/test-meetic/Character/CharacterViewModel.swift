@@ -1,5 +1,5 @@
 //
-//  ProfileViewModel.swift
+//  CharacterViewModel.swift
 //  test-meetic
 //
 //  Created by Alex Phonesavanh on 17/12/2018.
@@ -8,25 +8,25 @@
 
 import Foundation
 
-protocol ProfileScreenDelegate: class {
-    func didGoBack()
+protocol CharacterScreenDelegate: class {
+    func characterScreenDidGoBack()
 }
 
-final class ProfileViewModel {
+final class CharacterViewModel {
 
     // MARK: - Properties
 
-    weak var delegate: ProfileScreenDelegate?
-    private let profileId: Int
+    weak var delegate: CharacterScreenDelegate?
+    private let characterId: Int
     private let characterRepository: CharacterRepositoryType
 
     // MARK: - Init
 
-    init(delegate: ProfileScreenDelegate,
-         profileId: Int,
+    init(delegate: CharacterScreenDelegate,
+         characterId: Int,
          characterRepository: CharacterRepositoryType) {
         self.delegate = delegate
-        self.profileId = profileId
+        self.characterId = characterId
         self.characterRepository = characterRepository
     }
 
@@ -40,11 +40,11 @@ final class ProfileViewModel {
     // MARK: - Inputs
 
     func viewDidLoad() {
-        fetchCharacter(with: profileId)
+        fetchCharacter(with: characterId)
     }
 
     func goBack() {
-        delegate?.didGoBack()
+        delegate?.characterScreenDidGoBack()
     }
 
     // MARK: - Private

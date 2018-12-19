@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
 
         let appContext = AppContext(
-            profileRepository: CharacterRepository(),
+            characterRepository: CharacterRepository(),
             barButtonItemFactory: BarButtonItemFactory())
         appCoordinator = AppCoordinator(presenter: window!, appContext: appContext)
         appCoordinator.start()

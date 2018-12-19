@@ -27,17 +27,17 @@ final class AppScreens {
         let viewController: HomeViewController = instantiateViewController(with: String(describing: HomeViewController.self))
         viewController.viewModel = HomeViewModel(
             delegate: delegate,
-            characterRepository: appContext.profileRepository)
+            characterRepository: appContext.characterRepository)
         return viewController
     }
 
-    func createProfileViewController(delegate: ProfileScreenDelegate, profileId: Int) -> ProfileViewController {
-        let viewController: ProfileViewController = instantiateViewController(with: String(describing: ProfileViewController.self))
+    func createCharacterViewController(delegate: CharacterScreenDelegate, characterId: Int) -> CharacterViewController {
+        let viewController: CharacterViewController = instantiateViewController(with: String(describing: CharacterViewController.self))
         viewController.barButtonItemFactory = appContext.barButtonItemFactory
-        viewController.viewModel = ProfileViewModel(
+        viewController.viewModel = CharacterViewModel(
             delegate: delegate,
-            profileId: profileId,
-            characterRepository: appContext.profileRepository)
+            characterId: characterId,
+            characterRepository: appContext.characterRepository)
         return viewController
     }
 

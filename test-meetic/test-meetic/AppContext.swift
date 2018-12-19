@@ -12,14 +12,14 @@ final class AppContext {
 
     // MARK: - Properties
 
-    let profileRepository: CharacterRepositoryType
+    let characterRepository: CharacterRepositoryType
     let barButtonItemFactory: BarButtonItemFactory
 
     // MARK: - Init
 
-    init(profileRepository: CharacterRepositoryType,
+    init(characterRepository: CharacterRepositoryType,
          barButtonItemFactory: BarButtonItemFactory) {
-        self.profileRepository = profileRepository
+        self.characterRepository = characterRepository
         self.barButtonItemFactory = barButtonItemFactory
     }
 }
