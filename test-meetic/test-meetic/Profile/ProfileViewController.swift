@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class ProfileViewController: UIViewController {
 
@@ -51,7 +52,7 @@ final class ProfileViewController: UIViewController {
         }
 
         viewModel.imageUrl = { [weak self] imageUrl in
-            self?.imageView.load(from: imageUrl)
+            self?.imageView.sd_setImage(with: imageUrl)
         }
     }
 

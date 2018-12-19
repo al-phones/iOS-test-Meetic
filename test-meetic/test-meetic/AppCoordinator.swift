@@ -45,6 +45,6 @@ extension AppCoordinator: HomeScreenDelegate {
 
 extension AppCoordinator: ProfileScreenDelegate {
     func didGoBack() {
-        navigationController.dismiss(animated: true)
+        navigationController.popViewController(animated: true)
     }
 }

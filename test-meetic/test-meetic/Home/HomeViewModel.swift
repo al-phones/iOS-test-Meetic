@@ -21,6 +21,13 @@ final class HomeViewModel {
             displayableCharacters?(characters)
         }
     }
+    private var isFetchingData: Bool = false {
+        didSet {
+            isLoading?(isFetchingData)
+        }
+    }
+    private var numberOfPages = 0
+    private var currentPage = 0
 
     // MARK: - Init
 
@@ -33,11 +40,13 @@ final class HomeViewModel {
     // MARK: - Outputs
 
     var displayableCharacters: (([Character]) -> Void)?
+    var isLoading: ((Bool) -> Void)?
 
     // MARK: - Inputs
 
     func viewDidLoad() {
-        fetchCharacters()
+        currentPage = 1
+        fetchCharacters(for: currentPage)
     }
 
     func didSelectProfile(at index: Int) {
@@ -45,11 +54,22 @@ final class HomeViewModel {
         delegate?.didSelectCharacter(id: characterId)
     }
 
+    func fetchNextProfiles() {
+        guard !isFetchingData && currentPage < numberOfPages else { return }
+        currentPage += 1
+        fetchCharacters(for: currentPage)
+    }
+
     // MARK: - Private
 
-    private func fetchCharacters() {
-        characterRepository.getCharacters(successHandler: { [weak self] characters in
-            self?.characters.append(contentsOf: characters)
+    private func fetchCharacters(for page: Int) {
+        print("fetch page \(page)")
+        isFetchingData = true
+        characterRepository.getCharacters(page: page, successHandler: { [weak self] charactersPage in
+            guard let self = self else { return }
+            self.numberOfPages = charactersPage.info.pages
+            self.characters.append(contentsOf: charactersPage.characters)
+            self.isFetchingData = false
         })
     }
 }

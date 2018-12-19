@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeCharacterTableViewCell: UITableViewCell {
 
@@ -24,23 +25,12 @@ class HomeCharacterTableViewCell: UITableViewCell {
     }
     @IBOutlet private weak var characterNameLabel: UILabel!
 
-    // MARK: - Lifecycle
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
     // MARK: - Public
 
     func configure(with character: Character) {
         characterNameLabel.text = character.name
         if let imageUrl = URL(string: character.image) {
-            characterImageView.load(from: imageUrl)
+            characterImageView.sd_setImage(with: imageUrl)
         }
     }
-    
 }

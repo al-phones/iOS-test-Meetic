@@ -6,6 +6,7 @@ target 'test-meetic' do
   use_frameworks!
 
   pod 'Alamofire', '~> 4.7.0'
+  pod 'SDWebImage', '~> 4.0'
 
   # Pods for test-meetic
 

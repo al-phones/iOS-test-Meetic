@@ -37,11 +37,19 @@ final class HomeViewController: UIViewController {
             self.dataSource.characters = characters
             self.tableView.reloadData()
         }
+
+        viewModel.isLoading = { [weak self] isLoading in
+            self?.tableView.isUserInteractionEnabled = !isLoading
+        }
     }
 
     private func bind(to dataSource: HomeViewDataSource) {
         dataSource.didSelectProfile = { [weak self] index in
             self?.viewModel.didSelectProfile(at: index)
+        }
+
+        dataSource.didReachScrollBottom = { [weak self] in
+            self?.viewModel.fetchNextProfiles()
         }
     }
 
@@ -55,6 +63,7 @@ final class HomeViewController: UIViewController {
 final class HomeViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     var characters: [Character] = []
     var didSelectProfile: ((Int) -> Void)?
+    var didReachScrollBottom: (() -> Void)?
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characters.count
@@ -70,5 +79,13 @@ final class HomeViewDataSource: NSObject, UITableViewDataSource, UITableViewDele
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didSelectProfile?(indexPath.row)
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let bottomContentOffsetY = scrollView.contentSize.height - scrollView.frame.height
+        let contentOffsetY = scrollView.contentOffset.y
+        if contentOffsetY >= bottomContentOffsetY {
+            didReachScrollBottom?()
+        }
     }
 }

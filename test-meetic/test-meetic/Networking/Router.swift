@@ -9,7 +9,7 @@
 import Alamofire
 
 enum Router: URLRequestConvertible {
-    case getCharacters()
+    case getCharacters(page: Int)
     case getCharacter(id: Int)
 
     static let baseURLString = "https://rickandmortyapi.com/api"
@@ -37,6 +37,14 @@ enum Router: URLRequestConvertible {
         let url = try Router.baseURLString.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
+
+        switch self {
+        case .getCharacters(let page):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: ["page": page])
+        case .getCharacter:
+            break
+        }
+
         return urlRequest
     }
 }
