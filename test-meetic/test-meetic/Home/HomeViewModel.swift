@@ -64,11 +64,16 @@ final class HomeViewModel {
 
     private func fetchCharacters(for page: Int) {
         isFetchingData = true
-        characterRepository.getCharacters(page: page, successHandler: { [weak self] charactersPage in
+        characterRepository.getCharacters(page: page, completionHandler: { [weak self] result in
             guard let self = self else { return }
-            self.numberOfPages = charactersPage.info.pages
-            self.characters.append(contentsOf: charactersPage.characters)
-            self.isFetchingData = false
+            switch result {
+            case .success(let charactersPage):
+                self.numberOfPages = charactersPage.info.pages
+                self.characters.append(contentsOf: charactersPage.characters)
+                self.isFetchingData = false
+            case .error(let error):
+                print("\(error)")
+            }
         })
     }
 }

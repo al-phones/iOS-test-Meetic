@@ -50,13 +50,18 @@ final class CharacterViewModel {
     // MARK: - Private
 
     private func fetchCharacter(with id: Int) {
-        characterRepository.getCharacter(with: id, successHandler: { [weak self] character in
-            self?.name?("\(character.name)")
-            self?.gender?(character.gender)
-            self?.description?("\(character.status) - \(character.species) - \(character.origin.name)")
-            if let imageUrl = URL(string: character.image) {
-                self?.imageUrl?(imageUrl)
+        characterRepository.getCharacter(with: id) { [weak self] result in
+            switch result {
+            case .success(let character):
+                self?.name?("\(character.name)")
+                self?.gender?(character.gender)
+                self?.description?("\(character.status) - \(character.species) - \(character.origin.name)")
+                if let imageUrl = URL(string: character.image) {
+                    self?.imageUrl?(imageUrl)
+                }
+            case .error(let error):
+                print("\(error)")
             }
-        })
+        }
     }
 }

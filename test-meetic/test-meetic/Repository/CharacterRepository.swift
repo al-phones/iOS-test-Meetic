@@ -9,37 +9,45 @@
 import Alamofire
 
 protocol CharacterRepositoryType {
-    func getCharacters(page: Int, successHandler: @escaping (CharactersPage) -> Void)
-    func getCharacter(with id: Int, successHandler: @escaping (Character) -> Void)
+    func getCharacters(page: Int, completionHandler: @escaping (Result<CharactersPage>) -> Void)
+    func getCharacter(with id: Int, completionHandler: @escaping (Result<Character>) -> Void)
+}
+
+enum CharacterError: Error {
+    case invalidResponseData
 }
 
 final class CharacterRepository: CharacterRepositoryType {
-    func getCharacters(page: Int, successHandler: @escaping (CharactersPage) -> Void) {
+    func getCharacters(page: Int, completionHandler: @escaping (Result<CharactersPage>) -> Void) {
         Alamofire.request(Router.getCharacters(page: page))
             .responseData(completionHandler: { response in
                 switch response.result {
                 case .success(let data):
                     if let charactersPage = try? JSONDecoder().decode(CharactersPage.self, from: data) {
-                        successHandler(charactersPage)
+                        completionHandler(.success(charactersPage))
+                    } else {
+                        completionHandler(.error(CharacterError.invalidResponseData))
                     }
                 case .failure(let error):
-                    print("\(error)")
+                    completionHandler(.error(error))
                 }
             })
     }
 
     func getCharacter(
         with id: Int,
-        successHandler: @escaping (Character) -> Void) {
+        completionHandler: @escaping (Result<Character>) -> Void) {
         Alamofire.request(Router.getCharacter(id: id))
             .responseData(completionHandler: { response in
                 switch response.result {
                 case .success(let data):
                     if let character = try? JSONDecoder().decode(Character.self, from: data) {
-                        successHandler(character)
+                        completionHandler(.success(character))
+                    } else {
+                        completionHandler(.error(CharacterError.invalidResponseData))
                     }
                 case .failure(let error):
-                    print("\(error)")
+                    completionHandler(.error(error))
                 }
             })
     }

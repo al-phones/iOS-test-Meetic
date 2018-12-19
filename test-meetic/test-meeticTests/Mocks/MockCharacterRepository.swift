@@ -16,16 +16,16 @@ final class MockCharacterRepository: CharacterRepositoryType {
         self.charactersPages = charactersPages
     }
 
-    func getCharacters(page: Int, successHandler: @escaping (CharactersPage) -> Void) {
+    func getCharacters(page: Int, completionHandler: @escaping (CharactersPage) -> Void) {
         if page <= charactersPages.count {
-            successHandler(charactersPages[page - 1])
+            completionHandler(charactersPages[page - 1])
         }
     }
 
-    func getCharacter(with id: Int, successHandler: @escaping (test_meetic.Character) -> Void) {
+    func getCharacter(with id: Int, completionHandler: @escaping (test_meetic.Character) -> Void) {
         charactersPages.forEach { page in
             if let character = page.characters.first(where: { $0.id == id }) {
-                successHandler(character)
+                completionHandler(character)
                 return
             }
         }
