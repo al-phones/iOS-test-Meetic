@@ -51,7 +51,7 @@ final class CharacterViewModel {
 
     private func fetchCharacter(with id: Int) {
         characterRepository.getCharacter(with: id, successHandler: { [weak self] character in
-            self?.name?(character.name)
+            self?.name?("\(character.name)")
             self?.gender?(character.gender)
             self?.description?("\(character.status) - \(character.species) - \(character.origin.name)")
             if let imageUrl = URL(string: character.image) {

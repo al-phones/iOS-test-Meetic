@@ -18,7 +18,7 @@ final class HomeViewModel {
     private let characterRepository: CharacterRepositoryType
     private var characters: [Character] = [] {
         didSet {
-            displayableCharacters?(characters)
+            homeCharacters?(characters.map { HomeCharacter(character: $0) })
         }
     }
     private var isFetchingData: Bool = false {
@@ -39,7 +39,7 @@ final class HomeViewModel {
 
     // MARK: - Outputs
 
-    var displayableCharacters: (([Character]) -> Void)?
+    var homeCharacters: (([HomeCharacter]) -> Void)?
     var isLoading: ((Bool) -> Void)?
 
     // MARK: - Inputs
@@ -63,7 +63,6 @@ final class HomeViewModel {
     // MARK: - Private
 
     private func fetchCharacters(for page: Int) {
-        print("fetch page \(page)")
         isFetchingData = true
         characterRepository.getCharacters(page: page, successHandler: { [weak self] charactersPage in
             guard let self = self else { return }

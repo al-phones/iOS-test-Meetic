@@ -32,7 +32,7 @@ final class HomeViewController: UIViewController {
     // MARK: - Private
 
     private func bind(to viewModel: HomeViewModel) {
-        viewModel.displayableCharacters = { [weak self] characters in
+        viewModel.homeCharacters = { [weak self] characters in
             guard let self = self else { return }
             self.dataSource.characters = characters
             self.tableView.reloadData()
@@ -61,7 +61,7 @@ final class HomeViewController: UIViewController {
 }
 
 final class HomeViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
-    var characters: [Character] = []
+    var characters: [HomeCharacter] = []
     var didSelectCharacter: ((Int) -> Void)?
     var didReachScrollBottom: (() -> Void)?
 

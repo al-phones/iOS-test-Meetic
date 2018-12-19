@@ -27,9 +27,9 @@ class HomeCharacterTableViewCell: UITableViewCell {
 
     // MARK: - Public
 
-    func configure(with character: Character) {
+    func configure(with character: HomeCharacter) {
         characterNameLabel.text = character.name
-        if let imageUrl = URL(string: character.image) {
+        if let imageUrl = character.imageUrl {
             characterImageView.sd_setImage(with: imageUrl)
         }
     }
