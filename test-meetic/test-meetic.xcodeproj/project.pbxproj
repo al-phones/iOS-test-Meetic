@@ -33,6 +33,8 @@
 		F88FF09C21CA77B9008A07F6 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88FF09B21CA77B9008A07F6 /* HomeViewModelTests.swift */; };
 		F88FF09E21CA8EE4008A07F6 /* CharacterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88FF09D21CA8EE4008A07F6 /* CharacterViewModelTests.swift */; };
 		F88FF0A021CAA094008A07F6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88FF09F21CAA094008A07F6 /* Result.swift */; };
+		F88FF0A421CAA5AB008A07F6 /* HomeViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88FF0A321CAA5AB008A07F6 /* HomeViewDataSource.swift */; };
+		F88FF0A621CAA5DC008A07F6 /* HomeViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88FF0A521CAA5DC008A07F6 /* HomeViewDataSourceTests.swift */; };
 		F8C8A5EA21C99220000756F5 /* BarButtonItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A5E921C99220000756F5 /* BarButtonItemFactory.swift */; };
 		F8C8A5EC21C992CE000756F5 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A5EB21C992CE000756F5 /* AppContext.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		F88FF09B21CA77B9008A07F6 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		F88FF09D21CA8EE4008A07F6 /* CharacterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModelTests.swift; sourceTree = "<group>"; };
 		F88FF09F21CAA094008A07F6 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		F88FF0A321CAA5AB008A07F6 /* HomeViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDataSource.swift; sourceTree = "<group>"; };
+		F88FF0A521CAA5DC008A07F6 /* HomeViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDataSourceTests.swift; sourceTree = "<group>"; };
 		F8C8A5E921C99220000756F5 /* BarButtonItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItemFactory.swift; sourceTree = "<group>"; };
 		F8C8A5EB21C992CE000756F5 /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		FFE5AF882F3703F4217A4EA9 /* Pods_test_meetic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_meetic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				F88FF09B21CA77B9008A07F6 /* HomeViewModelTests.swift */,
+				F88FF0A521CAA5DC008A07F6 /* HomeViewDataSourceTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				F875CA5921CA484200923724 /* View */,
 				F85EDED121C7089B00E13B1E /* HomeViewController.swift */,
 				F85EDED421C7092400E13B1E /* HomeViewModel.swift */,
+				F88FF0A321CAA5AB008A07F6 /* HomeViewDataSource.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -477,6 +483,7 @@
 				F88FF0A021CAA094008A07F6 /* Result.swift in Sources */,
 				F85E1D3D21C85DED00050E67 /* CharacterViewController.swift in Sources */,
 				F85EDED821C70E6600E13B1E /* HomeCharacterTableViewCell.swift in Sources */,
+				F88FF0A421CAA5AB008A07F6 /* HomeViewDataSource.swift in Sources */,
 				F861278921C6C79900A6EA98 /* Character.swift in Sources */,
 				F861278F21C6C8ED00A6EA98 /* CharactersPage.swift in Sources */,
 				F875CA5B21CA485B00923724 /* HomeCharacter.swift in Sources */,
@@ -495,6 +502,7 @@
 				F875CA6621CA5CDC00923724 /* MockHomeScreenDelegate.swift in Sources */,
 				F88FF09E21CA8EE4008A07F6 /* CharacterViewModelTests.swift in Sources */,
 				F875CA6821CA5DA200923724 /* MockCharacterScreenDelegate.swift in Sources */,
+				F88FF0A621CAA5DC008A07F6 /* HomeViewDataSourceTests.swift in Sources */,
 				F875CA6421CA550700923724 /* MockCharacterRepository.swift in Sources */,
 				F875CA6121CA4DD100923724 /* AppScreensTests.swift in Sources */,
 			);

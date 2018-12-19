@@ -59,33 +59,3 @@ final class HomeViewController: UIViewController {
         tableView.register(UINib(nibName: "HomeCharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCharacterTableViewCell")
     }
 }
-
-final class HomeViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
-    var characters: [HomeCharacter] = []
-    var didSelectCharacter: ((Int) -> Void)?
-    var didReachScrollBottom: (() -> Void)?
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCharacterTableViewCell") as? HomeCharacterTableViewCell else {
-            fatalError("HomeTableViewCell not well implemented")
-        }
-        cell.configure(with: characters[indexPath.row])
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectCharacter?(indexPath.row)
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let bottomContentOffsetY = scrollView.contentSize.height - scrollView.frame.height
-        let contentOffsetY = scrollView.contentOffset.y
-        if contentOffsetY >= bottomContentOffsetY {
-            didReachScrollBottom?()
-        }
-    }
-}
